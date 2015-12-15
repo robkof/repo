@@ -16,7 +16,10 @@ app.controller('SortCtrl', function ($scope, $http) {
     $http.get('../scripts/jobs.json').success(function (resultat) {
 		
 		jobs = resultat;
-		init();
+		for(var i = 0; i < jobs.length; i++){
+		$scope.visibleItems.push(jobs[i]);
+		sortThisMother();
+	}
        //sätt $scope.visibleItems till resultat   ^
         
 
@@ -27,11 +30,7 @@ app.controller('SortCtrl', function ($scope, $http) {
     });
     
     $scope.visibleItems = [];
-function init() {
-	for(var i = 0; i < jobs.length; i++){
-		$scope.visibleItems.push(jobs[i]);
-	}
-}
+
 
 
     
