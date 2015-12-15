@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="tradingApp">
+
+    <div ng-controller="SortCtrl">
+        <input type="checkbox" ng-click="includeJobType(1)" /> Job_type:1</br/>
+        <input type="checkbox" ng-click="includeJobType(2)" /> Job_type:2</br/>
+        <input type="checkbox" ng-click="includeJobType(3)" /> Job_type:3</br/>
+
+            
+               <article ng-repeat="item in visibleItems">
+                   <h1>{{item.job_title}}</h1>
+                   <h4>{{item.organization_title}}</h4>
+                   <p>{{item.expires_at}}</p>
+               </article><br /><hr /><br />
+
+        
+    </div>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
